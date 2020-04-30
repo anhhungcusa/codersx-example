@@ -1,0 +1,32 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "text": "blah"
+    },
+    {
+      "text": "1",
+      "id": "dce7d150-84ad-11ea-bddd-b31dd0d2010a"
+    },
+    {
+      "text": "1",
+      "id": "df284b70-84ad-11ea-bddd-b31dd0d2010a"
+    },
+    {
+      "text": "1",
+      "id": "1f6b40c0-84ae-11ea-8e80-4b4cada6faf6"
+    },
+    {
+      "text": "1",
+      "id": "528ade70-84ae-11ea-9609-69a4d3e77c39"
+    },
+    {
+      "text": "2",
+      "id": "91606110-84ae-11ea-833a-0faa58d092be"
+    },
+    {
+      "text": "nấu cơm",
+      "id": "9a8eb0c0-84ae-11ea-833a-0faa58d092be"
+    }
+  ]
+}

@@ -1,9 +1,9 @@
-# CodersX Example
+# CodersX Examples
 
 ## Table of Contents
-- [CodersX Example](#codersx-example)
-	- [Table of Contents](#table-of-contents)
-	- [NodeJS Web Server using Express](#nodejs-web-server-using-express)
+- [CodersX Examples](#codersx-examples)
+  - [Table of Contents](#table-of-contents)
+  - [NodeJS Web Server using Express](#nodejs-web-server-using-express)
 
 ## NodeJS Web Server using Express
 - Bài 1 - Hello Coders.Tokyo
