@@ -1,0 +1,17 @@
+extends ../common/head
+block content
+  .container
+    h1.text-center Create transactions
+    form(action="/transactions", method="post")
+      .form-group
+        label(for="user") user
+        select.custom-select#user(name="userId")
+          each val in users
+            option(value=val._id)=val.name
+      .form-group
+        label(for="book") book
+        select.custom-select#book(name="bookId")
+          each val in books
+            option(value=val._id)=val.title
+      .d-flex.justify-content-center.align-items-center
+        button.btn.btn-primary add
