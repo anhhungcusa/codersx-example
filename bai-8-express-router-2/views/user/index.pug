@@ -1,0 +1,13 @@
+extends ../common/head
+block content
+  h1 Users
+  a(href='/users/create') new user
+  ul
+    each user in users
+      li
+        span=user.name
+        span -|-
+        a(href=`/users/${user.id}/update`) update 
+        span -|-
+        a(href=`/users/${user.id}/delete`) delete 
+

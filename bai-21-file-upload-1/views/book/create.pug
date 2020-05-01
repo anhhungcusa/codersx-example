@@ -1,0 +1,13 @@
+extends ../common/head
+block content
+  .container
+    h1.text-center Create book
+    form(action="/books", method="post")
+      .form-group
+        label(for="title") title
+        input.form-control(type="text" id='title' name='title')
+      .form-group
+        label(for="description") description
+        input.form-control(type="text" id='description' name='description')
+      .d-flex.justify-content-center.align-items-center
+        button.btn.btn-primary add

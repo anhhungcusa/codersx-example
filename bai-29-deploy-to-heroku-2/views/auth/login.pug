@@ -1,0 +1,13 @@
+extends ../common/head
+block content
+  .container
+    h1.text-center Login
+    form(action="/auth/login", method='post')
+      if(error)
+        .alert.alert-danger #{error}
+      .form-group
+        input.form-control(type="email" name="email" value=email || '' placeholder="email")
+      .form-group
+        input.form-control(type="password" name="password" value=password || '' placeholder='password')
+      .d-flex.justify-content-center.align-items-center
+        button.btn.btn-primary login

@@ -1,0 +1,153 @@
+{
+  "books": [
+    {
+      "title": "Highcharts Demo",
+      "description": "213123",
+      "id": "xMroTIpSt",
+      "imgUrl": "http://res.cloudinary.com/learn-nguyenvy/image/upload/v1587864242/student/46688ce847d7c612266e847fbdae0d17.jpg"
+    },
+    {
+      "title": "Places Search Box",
+      "description": "213123",
+      "id": "Kr1AnQ3Wh",
+      "imgUrl": "http://res.cloudinary.com/learn-nguyenvy/image/upload/v1587864262/student/92ab0a7dde9a50c4b7865b532daa0a48.jpg"
+    },
+    {
+      "title": "Gauge series",
+      "description": "Fork from https://javascript.info/async-await",
+      "id": "17rZNHQS4",
+      "imgUrl": "http://res.cloudinary.com/learn-nguyenvy/image/upload/v1587864272/student/a7a5413e54cc6e3c303589641eadfe46.jpg"
+    },
+    {
+      "title": "Hỗ trợ học js",
+      "description": "Fork from https://javascript.info/async-await",
+      "id": "ELk9i1aUs",
+      "imgUrl": "http://res.cloudinary.com/learn-nguyenvy/image/upload/v1587864289/student/e37dce3fd5385268bf470a5364652e0d.jpg"
+    },
+    {
+      "title": "Hỗ trợ học HTML, CSS, JS",
+      "description": "x",
+      "id": "xqFn-kTfh",
+      "imgUrl": "http://res.cloudinary.com/learn-nguyenvy/image/upload/v1587864304/student/2aadfd9cfdd828b84b47e8f7c5d07afc.jpg"
+    },
+    {
+      "title": "demo yse",
+      "description": "Fork from https://javascript.info/async-await",
+      "id": "z3IhLJ8AO",
+      "imgUrl": "http://res.cloudinary.com/learn-nguyenvy/image/upload/v1587864323/student/29052dd4f5303959f4beafaa25384198.jpg"
+    }
+  ],
+  "users": [
+    {
+      "name": "nguyenvy",
+      "id": "NXAi2E2IN",
+      "password": "$2b$10$X.wfHRypCk1Mb2si/jbEf.3/JipPtRH0utFr3YEqTRAtzcQ3ssqXq",
+      "email": "admin@gmail.com",
+      "role": 0,
+      "isLogging": true,
+      "wrongLoginCount": 1,
+      "avatar": "http://res.cloudinary.com/learn-nguyenvy/image/upload/v1587824164/student/0186702ed3ba81d176995768a5ef7be3.png"
+    },
+    {
+      "name": "renter",
+      "id": "B_yAnn5cL",
+      "password": "$2b$10$AyQjKhJQ.jPJyogALtUle.1sI7kpNoeeSoqTbgQwm/sQbbGLcG9tC",
+      "email": "renter@gmail.com",
+      "role": 1,
+      "isLogging": true
+    }
+  ],
+  "transactions": [
+    {
+      "userId": "B_yAnn5cL",
+      "bookIds": [
+        "qln1mW4I_",
+        "xMroTIpSt",
+        "Kr1AnQ3Wh",
+        "17rZNHQS4",
+        "ELk9i1aUs"
+      ],
+      "id": "5Hbwc7Hjq",
+      "isCompleted": false
+    },
+    {
+      "userId": "B_yAnn5cL",
+      "bookIds": [
+        "17rZNHQS4",
+        "xMroTIpSt",
+        "Kr1AnQ3Wh"
+      ],
+      "id": "I2lQCzJht",
+      "isCompleted": false
+    },
+    {
+      "userId": "B_yAnn5cL",
+      "bookIds": [
+        "xMroTIpSt"
+      ],
+      "id": "OdT2rFzbx",
+      "isCompleted": false
+    },
+    {
+      "userId": "B_yAnn5cL",
+      "bookIds": [
+        "xMroTIpSt",
+        "Kr1AnQ3Wh",
+        "17rZNHQS4"
+      ],
+      "id": "1hmqaFpjU",
+      "isCompleted": false
+    },
+    {
+      "userId": "B_yAnn5cL",
+      "bookIds": [
+        "xMroTIpSt",
+        "Kr1AnQ3Wh",
+        "17rZNHQS4"
+      ],
+      "id": "N64j18yIO",
+      "isCompleted": false
+    },
+    {
+      "userId": "NXAi2E2IN",
+      "bookIds": [
+        "xMroTIpSt"
+      ],
+      "id": "VhWq62wnU",
+      "isCompleted": false
+    },
+    {
+      "userId": "B_yAnn5cL",
+      "bookIds": [
+        "xMroTIpSt",
+        "Kr1AnQ3Wh",
+        "17rZNHQS4"
+      ],
+      "id": "9D91rSGIO",
+      "isCompleted": false
+    }
+  ],
+  "session": [],
+  "sessions": [
+    {
+      "id": "Yj9Luohb7",
+      "books": {
+        "qln1mW4I_": 7,
+        "fFAYWIq1X": 4
+      }
+    },
+    {
+      "id": "gcZ7eDTTe",
+      "books": {
+        "qln1mW4I_": 1
+      }
+    },
+    {
+      "id": "GZWVBjJ2i",
+      "books": [
+        "qln1mW4I_",
+        "fFAYWIq1X"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+extends ../common/head
+block content
+  .container
+    h1.text-center Create user
+    form(action="/users", method="post")
+      if error
+        .alert.alert-danger #{error}
+      .form-group
+        label(for="name") name
+        input.form-control(type="text" value=name || ''  id='name' name='name')
+      .d-flex.justify-content-center.align-items-center
+        button.btn.btn-primary add

@@ -1,0 +1,10 @@
+extends ../common/head
+block content
+  .container
+    h1.text-center Register your shop
+    form(action="/shops/register", method="post")
+      .form-group
+        label(for="name") Name:
+        input.form-control(type="text" name="name")
+      .d-flex.justify-content-center.align-items-center
+        button.btn.btn-primary register

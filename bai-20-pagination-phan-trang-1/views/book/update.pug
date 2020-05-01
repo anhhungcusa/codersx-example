@@ -1,0 +1,13 @@
+extends ../common/head
+block content
+  .container
+    h1.text-center Update book title
+    form(action=`/books/${book.id}`, method="post")
+      .form-group
+        label(for="title") title
+        input.form-control(type="text" value=book.title id='title' name='title')
+      .form-group
+        label(for="description") description
+        input.form-control(type="text" id='description' value=book.description disabled name='description')
+      .d-flex.justify-content-center.align-items-center
+        button.btn.btn-primary update

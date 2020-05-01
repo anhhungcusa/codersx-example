@@ -18,3 +18,6 @@
 - Bài 4 - POST method
   - [Codesandbox](https://codesandbox.io/s/bai-4-post-method1-binci)
   - [demo](https://binci.sse.codesandbox.io/)
+- Bài 28 - Bài 28 - Error Handling
+  - [Codesandbox](https://codesandbox.io/s/bai-28-error-handling1-g1wsk)
+  - [demo](https://g1wsk.sse.codesandbox.io/)

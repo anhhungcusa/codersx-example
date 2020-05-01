@@ -1,0 +1,19 @@
+extends ../common/head
+block content
+  .container.d-flex.flex-column.align-items-center
+    h1.text-center Profile
+    .avatar
+      img(id='avatar' src=auth.avatar ? auth.avatar : '/images/default-avatar.png')
+    form(action="", method="post", enctype="multipart/form-data")
+      if error
+        .alert.alert-danger #{error}
+      .form-group
+        .input-group.mb-3
+          .input-group-prepend
+            .input-group-text Upload
+          .custom-file
+            input.custom-file-input(type="file" id="avatar-input" aria-describedby="inputGroupFileAddon01" name='avatar')
+            label.custom-file-label(for="avatar-input" id='avatar-label') Choose file
+      .d-flex.justify-content-center.align-items-center   
+        button.btn.btn-primary upload
+  script(src="/javascripts/custom-file.js")

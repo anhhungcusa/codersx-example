@@ -1,0 +1,35 @@
+extends ../common/head
+block content
+  .container-fluid
+    h1.text-center Welcome to #{shop.myShop.name}
+    .container
+      table.table.table-striped.table-dark.table-bordered.mt-2
+        tr
+          th.text-center Image
+          th.text-center Title
+          th.text-center action
+        each book in books
+          tr
+            td.align-middle.d-flex.justify-content-center
+              .book-image
+                img(id='avatar' src=book.imgUrl)
+            td.text-center.align-middle=book.title
+            td.text-center.align-middle
+              .btn-group
+                a.btn.btn-secondary(href=`/books/${book._id}/add`) add
+      if pagination
+          nav(aria-label='Page navigation example')
+              ul.pagination.justify-content-end
+                  li.page-item(class=`${pagination.page === 0 ? 'disabled': ''}`)
+                      a.page-link(href=`/shops/${shop._id}/books?page=${pagination.page - 1}&limit=${pagination.limit}${search ? '&name=' + search : ''}`, aria-label='Previous')
+                          span(aria-hidden='true') &laquo;
+                  each val, index in pagination.links
+                      if (val === false) 
+                          li.page-item
+                              a.page-link(href=`/shops/${shop._id}/books?page=${ index === 1 ? pagination.links[2] - 1 : pagination.links[pagination.links.length - 3] + 1 }&limit=${pagination.limit}${search ? '&name=' + search : ''}`) ∙∙∙                    
+                      else
+                          li.page-item(class=`${val === pagination.page ? 'active': ''}`)
+                              a.page-link(href=`/shops/${shop._id}/books?page=${val}&limit=${pagination.limit}${search ? '&name=' + search : ''}`)=val                    
+                  li.page-item(class=`${pagination.page + 1 === pagination.numPages ? 'disabled': ''}`)
+                      a.page-link(href=`/shops/${shop._id}/books?page=${pagination.page + 1}&limit=${pagination.limit}${search ? '&name=' + search : ''}`, aria-label='Next')
+                          span(aria-hidden='true') &raquo;

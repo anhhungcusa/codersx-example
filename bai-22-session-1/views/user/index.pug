@@ -1,0 +1,36 @@
+extends ../common/head
+block content
+  .container
+    h1.text-center Users
+    a.btn.btn-primary(href='/users/create') new user
+    table.table.table-striped.table-dark.table-bordered.mt-2
+      tr
+        th.text-center Name
+        th.text-center Email
+        th.text-center Role
+        th.text-center action
+      each user in users
+        tr
+          td.text-center.align-middle=user.name
+          td.text-center.align-middle=user.email
+          td.text-center.align-middle=user.role === 0 ? 'Boss' : 'Renter'
+          td.d-flex.justify-content-center.align-items-center
+            .btn-group
+              a.btn.btn-secondary(href=`/users/${user.id}/update`) update 
+              a.btn.btn-secondary(href=`/users/${user.id}/delete`) delete 
+    if pagination
+        nav(aria-label='Page navigation example')
+            ul.pagination.justify-content-end
+                li.page-item(class=`${pagination.page === 0 ? 'disabled': ''}`)
+                    a.page-link(href=`/users?page=${pagination.page - 1}&limit=${pagination.limit}${search ? '&name=' + search : ''}`, aria-label='Previous')
+                        span(aria-hidden='true') &laquo;
+                each val, index in pagination.links
+                    if (val === false) 
+                        li.page-item
+                            a.page-link(href=`/users?page=${ index === 1 ? pagination.links[2] - 1 : pagination.links[pagination.links.length - 3] + 1 }&limit=${pagination.limit}${search ? '&name=' + search : ''}`) ∙∙∙                    
+                    else
+                        li.page-item(class=`${val === pagination.page ? 'active': ''}`)
+                            a.page-link(href=`/users?page=${val}&limit=${pagination.limit}${search ? '&name=' + search : ''}`)=val                    
+                li.page-item(class=`${pagination.page + 1 === pagination.numPages ? 'disabled': ''}`)
+                    a.page-link(href=`/users?page=${pagination.page + 1}&limit=${pagination.limit}${search ? '&name=' + search : ''}`, aria-label='Next')
+                        span(aria-hidden='true') &raquo;

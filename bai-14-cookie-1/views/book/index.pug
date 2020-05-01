@@ -1,0 +1,17 @@
+extends ../common/head
+block content
+  .container
+    h1.text-center Books
+    a.btn.btn-primary(href='/books/create') new book
+    table.table.table-striped.table-dark.table-bordered.mt-2
+      tr
+        th.text-center Title
+        th.text-center action
+      each book in books
+        tr
+          td.text-center.align-middle=book.title
+          td.d-flex.justify-content-center.align-items-center
+            .btn-group
+              a.btn.btn-secondary(href=`/books/${book.id}/update`) update 
+              a.btn.btn-secondary(href=`/books/${book.id}/delete`) delete 
+

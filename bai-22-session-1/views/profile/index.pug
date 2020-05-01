@@ -1,0 +1,10 @@
+extends ../common/head
+block content
+  .container.d-flex.flex-column.align-items-center
+    h1.text-center Profile
+    .avatar
+      img.img-fluid(src=auth.avatar ? auth.avatar : '/images/default-avatar.png')
+    a.btn.btn-primary.btn-sm(href="/profile/avatar")= auth.avatar ? 'change avatar': 'upload avatar'  
+    .info
+      .text-center Name: #{auth.name}
+      .text-center Email: #{auth.email}

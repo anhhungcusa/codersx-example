@@ -1,0 +1,7 @@
+extends ../common/head
+block content
+  h1 Create user
+  form(action="/users", method="post")
+    label(for="name") user
+    input(type="text" id='user' name='name')
+    button add

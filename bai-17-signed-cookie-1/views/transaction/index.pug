@@ -1,0 +1,20 @@
+extends ../common/head
+
+block content
+  .container
+    h1.text-center Transactions
+    a.btn.btn-primary(href="/transactions/create") new transaction
+    table.table.table-striped.table-dark.table-bordered.mt-2
+      tr 
+        th.text-center User
+        th.text-center Book
+        th.text-center action
+      each val in transactions
+        tr
+          td.text-center.align-middle=val.user ?  val.user.name : 'invalid user'
+          td.text-center.align-middle=val.book ?  val.book.title : 'invalid book'
+          td.d-flex.justify-content-center.align-items-center
+            .btn-group
+              a.btn.btn-secondary(href=`/transactions/${val.id}/delete`) delete
+              if val.isCompleted === false
+                a.btn.btn-secondary(href=`/transactions/${val.id}/complete`) complete  

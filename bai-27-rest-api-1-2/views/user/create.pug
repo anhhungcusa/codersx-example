@@ -1,0 +1,18 @@
+extends ../common/head
+block content
+  .container
+    h1.text-center Create user
+    form(action="/users", method="post")
+      if error
+        .alert.alert-danger #{error}
+      .form-group
+        label(for="name") name
+        input.form-control(type="text" value=name || ''  id='name' name='name')
+      .form-group
+        label(for="email") email
+        input.form-control(type="email" value=email || '' id='email' name='email')
+      .form-group
+        lable(for='password') default password
+        input.form-control.disabled(type="text" disabled value="123123" id='password')
+      .d-flex.justify-content-center.align-items-center
+        button.btn.btn-primary add

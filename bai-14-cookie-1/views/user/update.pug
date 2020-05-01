@@ -1,0 +1,12 @@
+extends ../common/head
+block content
+  .container
+    h1.text-center Update user
+    form(action=`/users/${user.id}`, method="post")
+      if error
+        .alert.alert-danger #{error}
+      .form-group
+        label(for="name") name
+        input.form-control(type="text" value=user.name id='name' name='name')
+      .d-flex.justify-content-center.align-items-center
+        button.btn.btn-primary update

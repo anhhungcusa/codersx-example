@@ -1,0 +1,17 @@
+extends ../common/head
+block content
+  .container
+    h1.text-center Users
+    a.btn.btn-primary(href='/users/create') new user
+    table.table.table-striped.table-dark.table-bordered.mt-2
+      tr
+        th.text-center Name
+        th.text-center action
+      each user in users
+        tr
+          td.text-center.align-middle=user.name
+          td.d-flex.justify-content-center.align-items-center
+            .btn-group
+              a.btn.btn-secondary(href=`/users/${user.id}/update`) update 
+              a.btn.btn-secondary(href=`/users/${user.id}/delete`) delete 
+

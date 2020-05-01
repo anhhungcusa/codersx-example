@@ -1,0 +1,25 @@
+extends ../common/head
+block content
+  .container.mb-5
+    h1.text-center Create book
+    form(action="/books", method="post" enctype="multipart/form-data")
+      if error
+        .alert.alert-danger #{error}
+      .form-group
+        label(for="title") title
+        input.form-control(type="text" id='title' name='title')
+      .form-group
+        label(for="description") description
+        input.form-control(type="text" id='description' name='description')
+      .input-group.mb-3
+        .input-group-prepend
+          .input-group-text Upload
+        .custom-file
+          input.custom-file-input(type="file" id="avatar-input" aria-describedby="inputGroupFileAddon01" name='avatar')
+          label.custom-file-label(for="avatar-input" id='avatar-label') Choose file
+      .d-flex.justify-content-center.align-items-center
+        .avatar
+          img(id='avatar' src="xxx")
+      .d-flex.justify-content-center.align-items-center
+        button.btn.btn-primary add
+  script(src="/javascripts/custom-file.js")

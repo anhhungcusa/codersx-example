@@ -1,0 +1,13 @@
+extends ../common/head
+block content
+  h1 Books
+  a(href='/books/create') new book
+  ul
+    each book in books
+      li
+        span=book.title
+        span -|-
+        a(href=`/books/${book.id}/update`) update 
+        span -|-
+        a(href=`/books/${book.id}/delete`) delete 
+

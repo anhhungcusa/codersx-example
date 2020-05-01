@@ -1,0 +1,9 @@
+extends ../common/head
+block content
+  h1 Update book title
+  form(action=`/books/${book.id}`, method="post")
+    label(for="title") title
+    input(type="text" value=book.title id='title' name='title')
+    label(for="description") description
+    input(type="text" id='description' value=book.description disabled name='description')
+    button update

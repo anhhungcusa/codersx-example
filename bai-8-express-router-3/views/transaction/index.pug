@@ -1,0 +1,17 @@
+extends ../common/head
+
+block content
+  h1 Transactions
+  a(href="/transactions/create") new transaction
+  table
+    tr 
+      th User
+      th Book
+      th action
+    each val in transactions
+      tr
+        td=val.user ?  val.user.name : 'invalid user'
+        td=val.book ?  val.book.title : 'invalid book'
+        td
+          a(href=`/transactions/${val.id}/delete`) delete
+      

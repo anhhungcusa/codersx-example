@@ -1,0 +1,80 @@
+{
+  "books": [
+    {
+      "title": "Highcharts Demo",
+      "description": "213123",
+      "id": "brilH_smy"
+    },
+    {
+      "title": "12123",
+      "description": "1",
+      "id": "Xl6bzqpxo"
+    }
+  ],
+  "users": [
+    {
+      "name": "NGUYEN VY 1",
+      "id": "lgFohRdC-",
+      "password": "202cb962ac59075b964b07152d234b70",
+      "email": "admin@gmail.com",
+      "role": 0,
+      "isLogging": true
+    },
+    {
+      "name": "renter 1",
+      "id": "EU5rERgp4",
+      "password": "4297f44b13955235245b2497399d7a93",
+      "email": "renter@gmail.com",
+      "role": 1,
+      "isLogging": false
+    },
+    {
+      "name": "renter 2",
+      "id": "jhvSYFDKE",
+      "password": "4297f44b13955235245b2497399d7a93",
+      "email": "renter2@gmail.com",
+      "role": 1,
+      "isLogging": false
+    },
+    {
+      "name": "renter 3",
+      "id": "fQjHkOMwJ",
+      "password": "4297f44b13955235245b2497399d7a93",
+      "email": "renter3@gmail.com",
+      "role": 1,
+      "isLogging": false
+    }
+  ],
+  "transactions": [
+    {
+      "userId": "lgFohRdC-",
+      "bookId": "brilH_smy",
+      "id": "kCoy16JMs",
+      "isCompleted": false
+    },
+    {
+      "userId": "EU5rERgp4",
+      "bookId": "brilH_smy",
+      "id": "x0qEg42rI",
+      "isCompleted": false
+    },
+    {
+      "userId": "lgFohRdC-",
+      "bookId": "Xl6bzqpxo",
+      "id": "78xQ0Yp-_",
+      "isCompleted": false
+    },
+    {
+      "userId": "jhvSYFDKE",
+      "bookId": "Xl6bzqpxo",
+      "id": "ibUqRqRXE",
+      "isCompleted": false
+    },
+    {
+      "userId": "fQjHkOMwJ",
+      "bookId": "Xl6bzqpxo",
+      "id": "qHzsImQFt",
+      "isCompleted": false
+    }
+  ]
+}

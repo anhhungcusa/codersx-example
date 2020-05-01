@@ -1,0 +1,989 @@
+openapi: 3.0.0
+info:
+  title: Book Store API
+  version: 1.0.0
+  contact:
+    email: nguyenphucnguyenvy@gmail.com
+servers:
+  - url: https://1x20l.sse.codesandbox.io/api/v1
+    description: BookStore API for dev
+tags:
+  - name: auth
+    description: Authentication
+  - name: books
+    description: Access to books of store
+  - name: transactions
+    description: Access to transactions of store
+  - name: users
+    description: Operations about users
+  - name: profile
+    description: Operations about profile of user
+paths:
+  /books:
+    get:
+      security:
+        - BearerAuth: []
+      summary: get books 
+      tags:
+        - books
+      parameters: 
+        - in: query
+          name: page
+          schema: 
+            type: integer
+            default: 0
+            example: 0
+        - in: query
+          name: limit
+          schema:
+            type: integer
+            default: 3
+            example: 2
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  books: 
+                    type: array
+                    items: 
+                      $ref: '#components/schemas/Book' 
+                  pagination:
+                    type: object
+                    properties:
+                      page:
+                        type: integer
+                      limit:
+                        type: integer
+                      length:
+                        type: integer
+                example:
+                  books:
+                    - _id: 5ea5700c9b99a306c9b0c268
+                      title: Places Search Box
+                      description: Fork from https://javascript.info/async-await
+                      imgUrl: http://res.cloudinary.com/learn-nguyenvy/image/upload/v1587900422/student/805afbd0e48202972948e82b0c2c20d0.jpg
+                      __v: 0
+                    - _id: 5ea5701a9b99a306c9b0c269
+                      title: Gauge series
+                      description: Fork from https://javascript.info/async-await
+                      imgUrl: http://res.cloudinary.com/learn-nguyenvy/image/upload/v1587900437/student/6612d02c1db62d1e6202d4b00c84f51f.jpg
+                      __v: 0
+                  pagination:
+                    page: 0
+                    limit: 2
+                    length: 9
+        '404':
+          description: not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                example:
+                  message: Books not found
+        '400':
+          description: bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                example:
+                  message: Invalid request
+    post:
+      security:
+        - BearerAuth: []   
+      summary: add new book
+      tags:
+        - books
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                title: 
+                  type: string
+                description: 
+                  type: string
+                avatar:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  newBook:
+                    type: object
+                    $ref: "#/components/schemas/Book"
+        '400':
+          description: not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                example:
+                  message: Invalid request
+  /books/{id}:
+    get:
+      security:
+        - BearerAuth: []
+      tags:
+        - books
+      summary: get book by id
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: the book ID
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: 
+                type: object
+                properties:
+                  book:
+                    $ref: '#/components/schemas/Book'
+              example:
+                _id: 5ea5700c9b99a306c9b0c268
+                title: Places Search Box
+                description: Fork from https://javascript.info/async-await
+                imgUrl: http://res.cloudinary.com/learn-nguyenvy/image/upload/v1587900422/student/805afbd0e48202972948e82b0c2c20d0.jpg
+                __v: 0
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                example:
+                  message: Book not found
+        '400':
+          description: bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    enum:
+                      - BookID is not valid
+                      - Book not found
+                      - Invalid Request
+                example:
+                  message: Book not found
+    patch:
+      security:
+        - BearerAuth: []
+      tags:
+        - books
+      summary: update title of a book
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: the book ID
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: 
+                type: object
+                properties:
+                  book:
+                    $ref: '#/components/schemas/Book'
+              example:
+                _id: 5ea5700c9b99a306c9b0c268
+                title: Places Search Box
+                description: Fork from https://javascript.info/async-await
+                imgUrl: http://res.cloudinary.com/learn-nguyenvy/image/upload/v1587900422/student/805afbd0e48202972948e82b0c2c20d0.jpg
+                __v: 0
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                example:
+                  message: Book not found
+        '400':
+          description: bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    enum:
+                      - BookID is not valid
+                      - Title is not valid
+                      - Invalid Request
+                example:
+                  message: Book not found
+    delete:
+      security:
+        - BearerAuth: []
+      tags:
+        - books
+      summary: delete a book
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: the book ID
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: 
+                type: object
+                properties:
+                  book:
+                    $ref: '#/components/schemas/Book'
+              example:
+                _id: 5ea5700c9b99a306c9b0c268
+                title: Places Search Box
+                description: Fork from https://javascript.info/async-await
+                imgUrl: http://res.cloudinary.com/learn-nguyenvy/image/upload/v1587900422/student/805afbd0e48202972948e82b0c2c20d0.jpg
+                __v: 0
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                example:
+                  message: Book not found
+        '400':
+          description: bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    enum:
+                      - BookID is not valid
+                      - Invalid Request
+                example:
+                  message: Book not found
+  /users:
+    get:
+      security:
+        - BearerAuth: []
+      summary: get users 
+      tags:
+        - users
+      parameters: 
+        - in: query
+          name: page
+          schema: 
+            type: integer
+            default: 0
+            example: 0
+        - in: query
+          name: limit
+          schema:
+            type: integer
+            default: 3
+            example: 2
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  users: 
+                    type: array
+                    items: 
+                      $ref: '#components/schemas/User' 
+                  pagination:
+                    type: object
+                    properties:
+                      page:
+                        type: integer
+                      limit:
+                        type: integer
+                      length:
+                        type: integer
+        '404':
+          description: not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        '400':
+          description: bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+    post:
+      security:
+        - BearerAuth: []     
+      summary: add new user
+      tags:
+        - users
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name: 
+                  type: string
+                email: 
+                  type: string
+                  format: email
+                imgUrl:
+                  type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  newUser:
+                    type: object
+                    $ref: "#/components/schemas/User"
+        '400':
+          description: bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                example:
+                  message: Invalid request
+  /users/{id}:
+    get:
+      security:
+        - BearerAuth: []
+      tags:
+        - users
+      summary: get user by id
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: the user ID
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: 
+                type: object
+                properties:
+                  user:
+                    $ref: '#/components/schemas/User'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        '400':
+          description: bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+    patch:
+      security:
+        - BearerAuth: []
+      tags:
+        - users
+      summary: update user
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: the book ID
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                email:
+                  type: string
+                  format: email
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: 
+                type: object
+                properties:
+                  user:
+                    $ref: '#/components/schemas/Book'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        '400':
+          description: bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+    delete:
+      security:
+        - BearerAuth: []
+      tags:
+        - users
+      summary: delete a user
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: the user ID
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        '400':
+          description: bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+  /transactions:
+    get:
+      security:
+        - BearerAuth: []
+      tags:
+        - transactions
+      summary: get transactions of store
+      parameters:
+        - in: query
+          schema: 
+            type: integer
+            default: 0
+          name: page
+        - in: query
+          schema: 
+            type: integer
+            default: 3
+          name: limit
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: 
+                type: object
+                properties:
+                  transactions:
+                    type: object
+                    properties:
+                      _id: 
+                        type: string
+                      isCompleted:  
+                        type: boolean
+                      user:
+                        $ref: '#/components/schemas/User'
+                      books:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Book'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        '400':
+          description: bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+    post:
+      security:
+        - BearerAuth: []
+      tags:
+        - transactions
+      summary: add new transaction
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userId:
+                  type: string
+                bookIds:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: 
+                type: object
+                properties:
+                  transaction:
+                    $ref: '#/components/schemas/Transaction'
+        '400':
+          description: bad request
+          content:
+            application/json:
+              schema: 
+                type: object
+                properties:
+                  message:
+                    type: string             
+  /transactions/{id}:
+    patch:
+      security:
+        - BearerAuth: []
+      tags:
+        - transactions
+      summary: complete a transaction by id
+      parameters:
+        - in: path
+          required: true 
+          schema: 
+            type: integer
+          name: id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: 
+                type: object
+                properties:
+                  transactions:
+                    type: object
+                    properties:
+                      _id: 
+                        type: string
+                      isCompleted:  
+                        type: boolean
+                      user:
+                        $ref: '#/components/schemas/User'
+                      books:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Book'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        '400':
+          description: bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+    delete:
+      security:
+        - BearerAuth: []
+      tags:
+        - transactions
+      summary: delete a transaction by id
+      parameters:
+        - in: path
+          required: true 
+          schema: 
+            type: integer
+          name: id
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        '400':
+          description: bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+  /auth/login:
+    post:
+      tags:
+        - auth
+      summary: authenticate user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  format: email
+                password:
+                  type: string
+              example:
+                email: example@gmail.com
+                password: 123123
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  user:
+                    $ref: "#/components/schemas/User"
+              example:
+                message: You have successfully logged in
+                user:
+                  role: 1
+                  isLogging: true
+                  wrongLoginCount: 0
+                  _id: 5ea7d400fddada53153cb7bd
+                  name: example
+                  password: $2b$10$6WjkNo96Kaow5LL9enp/eO44IDDjxJ5fezf3BhNvWHbFsc8gjyhO6
+                  email: example@gmail.com
+                  __v: 0
+        "400":
+          description: Bad request
+          content: 
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message: 
+                    type: string
+              example:
+                message: email or password incorrect
+  /auth/logout:
+    post:
+      summary: logout user
+      tags:
+        - auth
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+            example:
+              id: 5ea54ff9e3d8f9fe939a89b2
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+              example:
+                message: Invalid request
+        "400":
+          description: Bad request
+          content: 
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message: 
+                    type: string
+              example:
+                message: Invalid request
+  /profile/password:
+    patch:
+      security:
+        - BearerAuth: []
+      tags:
+        - profile
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                old_password:
+                  type: string
+                new_password: 
+                  type: string
+                confirm_password:
+                  type: string
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object  
+                properties:
+                  user:
+                    $ref: '#/components/schemas/User'
+        '404':
+          description: not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        '400':
+          description: bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+  /profile/avatar:
+    patch:
+      security:
+        - BearerAuth: []
+      tags:
+        - profile
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                avatar:
+                  type: string
+                  format: binary
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object  
+                properties:
+                  user:
+                    $ref: '#/components/schemas/User'
+        '404':
+          description: not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        '400':
+          description: bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string     
+components:
+  schemas:
+    Book:
+      type: object
+      properties:
+        _id:
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+        imgUrl:
+          type: string
+      example:
+        _id: 5ea5700c9b99a306c9b0c268
+        title: Places Search Box
+        description: Fork from https://javascript.info/async-await
+        imgUrl: http://res.cloudinary.com/learn-nguyenvy/image/upload/v1587900422/student/805afbd0e48202972948e82b0c2c20d0.jpg
+        __v: 0
+    User:
+      type: object
+      properties:
+        _id:
+          type: string
+        name:
+          type: string
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+        role:
+          type: integer
+          enum:
+            - 0
+            - 1
+          default: 1
+        isLogging:
+          type: boolean
+          default: false
+        wrongLoginCount:
+          type: integer
+        avatar:
+          type: string
+      example:
+        role: 0
+        isLogging: true
+        wrongLoginCount: 1
+        _id: 5ea54ff9e3d8f9fe939a89b2
+        name: nguyenvy
+        password: $2b$10$X.wfHRypCk1Mb2si/jbEf.3/JipPtRH0utFr3YEqTRAtzcQ3ssqXq
+        email: admin@gmail.com
+        avatar: http://res.cloudinary.com/learn-nguyenvy/image/upload/v1587994173/student/1c287138f02a9fbe0abd01de94ab325b.png
+    Transaction:
+      type: object
+      properties:
+        userId:
+          type: string
+        bookIds:
+          type: array
+          items:
+            type: string
+        isCompleted:
+          type: boolean
+          default: false
+      example:
+        bookIds:
+          - 5ea5700c9b99a306c9b0c268
+          - 5ea5701a9b99a306c9b0c269
+          - 5ea570299b99a306c9b0c26a
+          - 5ea570419b99a306c9b0c26b
+        isCompleted: false
+        _id: 5eaaa57a76aed2005933b185
+        userId: 5ea54ff9e3d8f9fe939a89b2
+        __v: 0
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer

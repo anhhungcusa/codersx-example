@@ -1,0 +1,7 @@
+extends ../common/head
+block content
+  h1 Update user
+  form(action=`/users/${user.id}`, method="post")
+    label(for="name") name
+    input(type="text" value=user.name id='name' name='name')
+    button update

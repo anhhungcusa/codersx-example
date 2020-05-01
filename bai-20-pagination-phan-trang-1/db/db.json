@@ -1,0 +1,259 @@
+{
+  "books": [
+    {
+      "title": "Highcharts Demo",
+      "description": "x",
+      "id": "rUr0LSo_m"
+    },
+    {
+      "title": "Hỗ trợ học js",
+      "description": "x",
+      "id": "ZypNVsnaA"
+    },
+    {
+      "title": "Places Search Box",
+      "description": "s",
+      "id": "1jeWTH3IC"
+    },
+    {
+      "title": "Gauge series",
+      "description": "fewewf",
+      "id": "0WJsb3X0G"
+    },
+    {
+      "title": "Gauge series",
+      "description": "Fork from https://javascript.info/async-await",
+      "id": "IFPrDR6rI"
+    },
+    {
+      "title": "Hỗ trợ học HTML, CSS, JS",
+      "description": "Fork from https://javascript.info/async-await",
+      "id": "U8Uxu1AlR"
+    },
+    {
+      "title": "Bibliography of Oregon history",
+      "description": "text",
+      "id": "zndUbEmNyJ"
+    },
+    {
+      "title": "Bibliography of Saskatchewan history",
+      "description": "text",
+      "id": "PKDpXC_pKw"
+    },
+    {
+      "title": "Bibliography of South Dakota history",
+      "description": "text",
+      "id": "wHH5lpYIbd"
+    },
+    {
+      "title": "Bibliography of the American Civil War",
+      "description": "text",
+      "id": "yqTNyUDzkO"
+    },
+    {
+      "title": "Bibliography of the American Revolutionary War",
+      "description": "text",
+      "id": "tjJDcnZ6Zw"
+    },
+    {
+      "title": "Bibliography of the Arab–Israeli conflict",
+      "description": "text",
+      "id": "qsnUhJtrHO"
+    },
+    {
+      "title": "Bibliography of the Front de libération du Québec",
+      "description": "text",
+      "id": "X_mo2K3PHQ"
+    },
+    {
+      "title": "Bibliography of The Holocaust",
+      "description": "text",
+      "id": "mCy1vY0V4H"
+    },
+    {
+      "title": "Bibliography of the Kent State shootings",
+      "description": "text",
+      "id": "WGZz7Dnyd7"
+    },
+    {
+      "title": "Bibliography of the Lewis and Clark Expedition",
+      "description": "text",
+      "id": "cpxeVdYMj3"
+    },
+    {
+      "title": "Bibliography of the Ottoman Empire",
+      "description": "text",
+      "id": "lqZdhqVk2v"
+    },
+    {
+      "title": "Bibliography of the Reconstruction Era",
+      "description": "text",
+      "id": "tLv7NGknl7"
+    },
+    {
+      "title": "Bibliography of the Republican Party",
+      "description": "text",
+      "id": "65KcXvEjcc"
+    },
+    {
+      "title": "Bibliography of the Rwandan genocide",
+      "description": "text",
+      "id": "-BPlKfblYZ"
+    },
+    {
+      "title": "Bibliography of the War in Darfur",
+      "description": "text",
+      "id": "jZsvTGdHT-"
+    },
+    {
+      "title": "Bibliography of the War of 1812",
+      "description": "text",
+      "id": "daySYVduNG-"
+    },
+    {
+      "title": "Bibliography of the history of Lyon",
+      "description": "text",
+      "id": "DpABScE_A3J"
+    },
+    {
+      "title": "Bibliography of United States military history",
+      "description": "text",
+      "id": "Lm_mNsVVcLh"
+    },
+    {
+      "title": "Bibliography of early U.S. naval history",
+      "description": "text",
+      "id": "_tOe780S44M"
+    },
+    {
+      "title": "Bibliography of World War I",
+      "description": "text",
+      "id": "sMu8B8mvMlm"
+    },
+    {
+      "title": "Bibliography of World War II",
+      "description": "text",
+      "id": "MxMqL_AI8vP"
+    },
+    {
+      "title": "Bibliography of Wyoming history",
+      "description": "text",
+      "id": "AsLCBULHvZO"
+    }
+  ],
+  "users": [
+    {
+      "name": "nguyenvy",
+      "id": "NXAi2E2IN",
+      "password": "$2b$10$X.wfHRypCk1Mb2si/jbEf.3/JipPtRH0utFr3YEqTRAtzcQ3ssqXq",
+      "email": "admin@gmail.com",
+      "role": 0,
+      "isLogging": false,
+      "wrongLoginCount": 2
+    },
+    {
+      "name": "renter",
+      "id": "Q98l2-7eN",
+      "password": "$2b$10$cQYyZgXXh3wtW3FBgFbWte7kDAkoUAH7.fjIhaKmtdv2eVc3312AW",
+      "email": "renter@gmail.com",
+      "role": 1,
+      "isLogging": true,
+      "wrongLoginCount": 2
+    },
+    {
+      "name": "renter 2",
+      "id": "qynQduX0s",
+      "password": "$2b$10$J7yRB3cUixiWP7lKO0T4A.lmqsD2/TR5VfxF7ygMoh8h.jn7V/M6q",
+      "email": "renter2@gmail.com",
+      "role": 1,
+      "isLogging": false
+    },
+    {
+      "name": "nguyenvy",
+      "id": "iHto6KL4D",
+      "password": "$2b$10$qJCXyAJ32uQ9Wuv0SzBtQOLiUAmBjOMotSvBXkn1pEMj8QY4C7OOm",
+      "email": "nguyenvy@gmail.com",
+      "role": 1,
+      "isLogging": false
+    },
+    {
+      "name": "12123",
+      "id": "7e3yvkBVn",
+      "password": "$2b$10$G7USkNCteYojZN02m0aZ9OMagvJIPp.6bdoKQ6EO8ClUVT0.CYnxG",
+      "email": "vy@gmail.com",
+      "role": 1,
+      "isLogging": false
+    },
+    {
+      "name": "xxxx",
+      "id": "G4u9E2XLk",
+      "password": "$2b$10$o.iqM3i45iMJvr3FAKujeOmYfxttPbXYmF1vYeif45AOL6kzb6p3u",
+      "email": "rent1er@gmail.com",
+      "role": 1,
+      "isLogging": false
+    },
+    {
+      "name": "a",
+      "id": "o2o7IAwYx",
+      "password": "$2b$10$hOS4nRgF9DEmCAMttJV4quYjXTxnOOn8N6G1QbJ.r9KidYFSsrrqa",
+      "email": "admin1@gmail.com",
+      "role": 1,
+      "isLogging": false
+    },
+    {
+      "name": "NGUYEN VY",
+      "id": "KfPl5BOr0",
+      "password": "$2b$10$HxrJcYmxfYkHWiI/gF1/cOnaYP.lu3sRfZMaTRfIyvT8d/3Wr2eCW",
+      "email": "nguyenphucnguyenvy@gmail.com",
+      "role": 1,
+      "isLogging": false,
+      "wrongLoginCount": 7
+    },
+    {
+      "name": "NGUYEN VY",
+      "id": "h2GYpeAV2",
+      "password": "$2b$10$hlADxCK5.PH7la77vzNxEOiCUdpQxchfJJhY70ayNN8i6RS5UTGY6",
+      "email": "anhhung@gmail.com",
+      "role": 1,
+      "isLogging": false
+    }
+  ],
+  "transactions": [
+    {
+      "userId": "NXAi2E2IN",
+      "bookId": "rUr0LSo_m",
+      "id": "Piw0MvAF7",
+      "isCompleted": false
+    },
+    {
+      "userId": "NXAi2E2IN",
+      "bookId": "PKDpXC_pKw",
+      "id": "LUcFUJN5K",
+      "isCompleted": false
+    },
+    {
+      "userId": "o2o7IAwYx",
+      "bookId": "Lm_mNsVVcLh",
+      "id": "kYMZn4_Wl",
+      "isCompleted": false
+    },
+    {
+      "userId": "NXAi2E2IN",
+      "bookId": "mCy1vY0V4H",
+      "id": "Xg0mCRGAe",
+      "isCompleted": false
+    },
+    {
+      "userId": "NXAi2E2IN",
+      "bookId": "qsnUhJtrHO",
+      "id": "zDtfm0neh",
+      "isCompleted": false
+    },
+    {
+      "userId": "NXAi2E2IN",
+      "bookId": "tjJDcnZ6Zw",
+      "id": "etejUFu_P",
+      "isCompleted": false
+    }
+  ]
+}

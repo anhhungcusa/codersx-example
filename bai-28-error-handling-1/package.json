@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "nodemon app.js localhost 8080"
   },
   "dependencies": {
     "@sendgrid/mail": "7.0.1",
