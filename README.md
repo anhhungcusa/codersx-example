@@ -1,11 +1,10 @@
 # CodersX Examples
 
-## Table of Contents
 - [CodersX Examples](#codersx-examples)
-  - [Table of Contents](#table-of-contents)
   - [NodeJS Web Server using Express](#nodejs-web-server-using-express)
 
 ## NodeJS Web Server using Express
+
 - Bài 1 - Hello Coders.Tokyo
   - [Codesandbox](https://codesandbox.io/s/bai-1-hello-coderstokyo1-jn27m)
   - [demo](https://jn27m.sse.codesandbox.io/)
@@ -18,6 +17,87 @@
 - Bài 4 - POST method
   - [Codesandbox](https://codesandbox.io/s/bai-4-post-method1-binci)
   - [demo](https://binci.sse.codesandbox.io/)
+- Bài 6 - Tích hợp database (lowdb)
+  - [Codesandbox](https://codesandbox.io/s/bai-6-tich-hop-database-lowdb-2oj8v)
+  - [demo](https://2oj8v.sse.codesandbox.io/)
+- Bài 7 - Route param
+  - [Codesandbox](https://codesandbox.io/s/bai-7-route-param1-svh3w)
+  - [demo](https://svh3w.sse.codesandbox.io/)
+- Bài 7 - Route param - 2
+  - [Codesandbox](https://codesandbox.io/s/bai-7-route-param2-rnj08)
+  - [demo](https://rnj08.sse.codesandbox.io/)
+- Bài 8 - Express Router
+  - [Codesandbox](https://codesandbox.io/s/bai-8-express-router1-nsf7j)
+  - [demo](https://nsf7j.sse.codesandbox.io/)
+- Bài 8 - Express Router - 2
+  - [Codesandbox](https://codesandbox.io/s/bai-8-express-router2-sdnxw)
+  - [demo](https://sdnxw.sse.codesandbox.io/)
+- Bài 8 - Express Router - 3
+  - [Codesandbox](https://codesandbox.io/s/bai-8-express-router3-86bbk)
+  - [demo](https://86bbk.sse.codesandbox.io/)
+- Bài 9 - Controller (MVC)
+  - [Codesandbox](https://codesandbox.io/s/bai-9-controller-mvc1-m15um)
+  - [demo](https://m15um.sse.codesandbox.io/)
+- Bài 9 - Controller (MVC) - 2
+  - [Codesandbox](https://codesandbox.io/s/bai-9-controller-mvc2-sci5t)
+  - [demo](https://sci5t.sse.codesandbox.io/)
+- Bài 10 - Template layout
+  - [Codesandbox](https://codesandbox.io/s/bai-10-template-layout1-dzzhz)
+  - [demo](https://dzzhz.sse.codesandbox.io/)
+- Bài 11 - Static files
+  - [Codesandbox](https://codesandbox.io/s/bai-11-static-files1-64o9g)
+  - [demo](https://64o9g.sse.codesandbox.io/)
+- Bài 11 - Static files - 2
+  - [Codesandbox](https://codesandbox.io/s/bai-11-static-files2-3twc0)
+  - [demo](https://3twc0.sse.codesandbox.io/)
+- Bài 11 - Static files - 3
+  - [Codesandbox](https://codesandbox.io/s/bai-11-static-files3-rr8qn)
+  - [demo](https://rr8qn.sse.codesandbox.io/)
+- Bài 12 - Server-side validation
+  - [Codesandbox](https://codesandbox.io/s/bai-12-server-side-validation-y20k8)
+  - [demo](https://y20k8.sse.codesandbox.io/)
+- Bài 12 - Server-side validation - 2
+  - [Codesandbox](https://codesandbox.io/s/bai-12-server-side-validation2-0m2eo)
+  - [demo](https://0m2eo.sse.codesandbox.io/)
+- Bài 13 - Middleware
+  - [Codesandbox](https://codesandbox.io/s/bai-13-middleware1-vbb2u)
+  - [demo](https://vbb2u.sse.codesandbox.io/)
+- Bài 14 - Cookie
+  - [Codesandbox](https://codesandbox.io/s/bai-14-cookie1-5rufy)
+  - [demo](https://5rufy.sse.codesandbox.io/)
+- Bài 15 - Authentication (Login)
+  - [Codesandbox](https://codesandbox.io/s/bai-15-authentication-login1-69xr6)
+  - [demo](https://69xr6.sse.codesandbox.io/)
+- Bài 16 - md5
+  - [Codesandbox](https://codesandbox.io/s/bai-16-md51-5xp48)
+  - [demo](https://5xp48.sse.codesandbox.io/)
+- Bài 16 - md5 - 2
+  - [Codesandbox](https://codesandbox.io/s/bai-16-md52-8qmz8)
+  - [demo](https://8qmz8.sse.codesandbox.io/)
+- Bài 17 - Signed Cookie
+  - [Codesandbox](https://codesandbox.io/s/bai-17-signed-cookie1-45k1b)
+  - [demo](https://45k1b.sse.codesandbox.io/)
+- Bài 18 - Environment Variables
+  - [Codesandbox](https://codesandbox.io/s/bai-18-environment-variables1-uj1cr)
+  - [demo](https://uj1cr.sse.codesandbox.io/)
+- Bài 20 - Pagination (Phân trang)
+  - [Codesandbox](https://codesandbox.io/s/bai-20-pagination-phan-trang1-zrxot)
+  - [demo](https://zrxot.sse.codesandbox.io/)
+- Bài 21 - File Upload
+  - [Codesandbox](https://codesandbox.io/s/bai-21-file-upload1-e9g97)
+  - [demo](https://e9g97.sse.codesandbox.io/)
+- Bài 22 - Session
+  - [Codesandbox](https://codesandbox.io/s/bai-22-session1-hoyqp)
+  - [demo](https://hoyqp.sse.codesandbox.io/)
+- Bài 25 - Giới thiệu Mongoose
+  - [Codesandbox](https://codesandbox.io/s/bai-25-gioi-thieu-mongoose1-09bkp)
+  - [demo](https://09bkp.sse.codesandbox.io/)
+- Bài 27 - REST API - 1,2
+  - [Codesandbox](https://codesandbox.io/s/bai-27-rest-api1-2-1x20l)
+  - [demo](https://1x20l.sse.codesandbox.io/)
 - Bài 28 - Bài 28 - Error Handling
   - [Codesandbox](https://codesandbox.io/s/bai-28-error-handling1-g1wsk)
   - [demo](https://g1wsk.sse.codesandbox.io/)
+- Bài 29 - Deploy to Heroku - 2
+  - [Codesandbox](https://codesandbox.io/s/bai-29-deploy-to-heroku2-g8zku)
+  - [demo](https://g8zku.sse.codesandbox.io/)
